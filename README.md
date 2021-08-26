@@ -8,7 +8,8 @@ Team Leader :
 
 Software Module Members :
 1. [Srinivas]
-2. [Harish R]
+2. [Amritha]
+3. [Harish R]
 
 You can find the details of the competition [here].
 
@@ -16,5 +17,6 @@ You can find the details of the competition [here].
 [Srinivas]: https://github.com/Srrrrini
 [Harish R]: https://github.com/HR-1-1
 [Gayathri]: https://github.com/Gayathriboddu2001
+[Amritha]: https://github.com/amritha3212
 Finally one last word,
 > Please Work on the Bot
