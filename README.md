@@ -25,11 +25,11 @@ You can find the details of the competition [here].
 
 - Get the necessary components and make connections as shown below :
 
-![Connections](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/BotPictures/Connections.png)
+![Connections](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Bot%20Pictures/Connections.png)
 
 - The current version of our bot looks like this :
 
-![Bot version 1](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Bot Pictures/Bot%20v1.jpeg)
+![Bot version 1](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Bot%20Pictures/Bot%20v1.jpeg)
 
 - Clone the repo and upload the sketch file to the ESP32 board.
 - Install IP WebCam in your mobile and press the start server option.
