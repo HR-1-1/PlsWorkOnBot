@@ -31,14 +31,14 @@ You can find the details of the competition [here].
 ![Bot version 1](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Bot%20Pictures/Bot%20v1.jpeg)
 
 - Clone the repo and upload the sketch file to the ESP32 board.
-- Take a print of the aruco Codes given [here] and set up the [arena] as shown here.
+- Take a print of the aruco Codes [given here] and set up the [arena] as shown here.
 - Install IP WebCam in your mobile and press the start server option.
 - Make sure the mobile and the local machine are in same network.
 - Now Run the python code in your local machine.
 - If you face any difficulties in the above steps, Feel free to check [this] out!
 
 [this picture]: (https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Bot%20Pictures/Connections.png)
-[here]: https://github.com/HR-1-1/PlsWorkOnBot/tree/main/arUco_Codes
+[given here]: https://github.com/HR-1-1/PlsWorkOnBot/tree/main/arUco_Codes
 [arena]: https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Simulations/Arena.png
 [this]: http://www.lasesp.com/article/16300624989611547/ESP32_WiFi%20Bot%20Controlled%20by%20Python
 
