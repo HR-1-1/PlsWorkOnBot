@@ -20,12 +20,15 @@
 #define FORWARD 1
 #define BACKWARD -1
 
+int LED_R = 13;
+int LED_G = 12;
+int LED_B = 14;
 
-const char* ssid = "LAPTOP-3OSR4EKG 2152"; //Enter your Laptop hotspot ssid
-const char* pass = "9730|p7L"; //Enter your password for the same
+const char* ssid = "DESKTOP-PT0K995 9771"; //Enter your Laptop hotspot ssid
+const char* pass = "-jL46694"; //Enter your password for the same
 
 const int port = 8090;
-const char* host = "192.168.137.1"; // Enter the IP address of the local machine
+const char* host = "192.168.43.190"; // Enter the IP address of the local machine
 
 
 struct MOTOR_PINS
@@ -34,14 +37,55 @@ struct MOTOR_PINS
   int pinIN2;    
 };
 
+/****************CONNECTIONS************
+ * THE SIDE WITH BATTERY BANK IS FRONT.
+ * FOR THE FRONT MOTOR DRIVER :
+ * IN1 : 33
+ * IN2 : 32
+ * IN3 : 26
+ * IN4 : 25
+ * FOR THE BACK MOTOR DRIVER :
+ * IN1 : 4
+ * IN2 : 2 
+ * IN3 : 21
+ * IN4 : 19
+ * 
+ */
+
+
+
+
 std::vector<MOTOR_PINS> motorPins = 
 {
-  {16, 17},  //FRONT_RIGHT_MOTOR      
-  {18, 19},  //BACK_RIGHT_MOTOR
-  {26, 25},  //FRONT_LEFT_MOTOR
-  {14, 27},  //BACK_LEFT_MOTOR   
+  {33, 32},  //FRONT_RIGHT_MOTOR      
+  {19, 21},  //BACK_RIGHT_MOTOR
+  {26, 25},  //FRONT_LEFT_MOTOR       
+  {4, 2},  //BACK_LEFT_MOTOR   
 };
 
+void greenGlow(){
+  digitalWrite(LED_R, LOW);
+  digitalWrite(LED_G, HIGH);
+  digitalWrite(LED_B, LOW);
+}
+
+void redGlow(){
+  digitalWrite(LED_R, HIGH);
+  digitalWrite(LED_G, LOW);
+  digitalWrite(LED_B, LOW);
+}
+
+void blueGlow(){
+  digitalWrite(LED_R, LOW);
+  digitalWrite(LED_G, LOW);
+  digitalWrite(LED_B, HIGH);
+}
+
+void yellowGlow(){
+  digitalWrite(LED_R, HIGH);
+  digitalWrite(LED_G, HIGH);
+  digitalWrite(LED_B, LOW);
+}
 
 void rotateMotor(int motorNumber, int motorDirection)
 {
@@ -74,7 +118,8 @@ void processCarMovement(String inputValue)
       rotateMotor(FRONT_RIGHT_MOTOR, FORWARD);
       rotateMotor(BACK_RIGHT_MOTOR, FORWARD);
       rotateMotor(FRONT_LEFT_MOTOR, FORWARD);
-      rotateMotor(BACK_LEFT_MOTOR, FORWARD);                  
+      rotateMotor(BACK_LEFT_MOTOR, FORWARD);
+      greenGlow();                  
       break;
 
     case DOWN:
@@ -88,14 +133,16 @@ void processCarMovement(String inputValue)
       rotateMotor(FRONT_RIGHT_MOTOR, FORWARD);
       rotateMotor(BACK_RIGHT_MOTOR, BACKWARD);
       rotateMotor(FRONT_LEFT_MOTOR, BACKWARD);
-      rotateMotor(BACK_LEFT_MOTOR, FORWARD);   
+      rotateMotor(BACK_LEFT_MOTOR, FORWARD); 
+      blueGlow();  
       break;
 
     case RIGHT:
       rotateMotor(FRONT_RIGHT_MOTOR, BACKWARD);
       rotateMotor(BACK_RIGHT_MOTOR, FORWARD);
       rotateMotor(FRONT_LEFT_MOTOR, FORWARD);
-      rotateMotor(BACK_LEFT_MOTOR, BACKWARD);  
+      rotateMotor(BACK_LEFT_MOTOR, BACKWARD); 
+      yellowGlow(); 
       break;
 
     case UP_LEFT:
@@ -137,14 +184,15 @@ void processCarMovement(String inputValue)
       rotateMotor(FRONT_RIGHT_MOTOR, BACKWARD);
       rotateMotor(BACK_RIGHT_MOTOR, BACKWARD);
       rotateMotor(FRONT_LEFT_MOTOR, FORWARD);
-      rotateMotor(BACK_LEFT_MOTOR, FORWARD);   
+      rotateMotor(BACK_LEFT_MOTOR, FORWARD);  
       break;
 
     case STOP:
       rotateMotor(FRONT_RIGHT_MOTOR, STOP);
       rotateMotor(BACK_RIGHT_MOTOR, STOP);
       rotateMotor(FRONT_LEFT_MOTOR, STOP);
-      rotateMotor(BACK_LEFT_MOTOR, STOP);    
+      rotateMotor(BACK_LEFT_MOTOR, STOP);  
+      redGlow();  
       break;
 
     default:
@@ -167,9 +215,17 @@ void setUpPinModes()
 }
 
 
-void setup(void) 
+void setup() 
 {
   setUpPinModes();
+  pinMode(LED_R, OUTPUT);
+  pinMode(LED_G, OUTPUT);
+  pinMode(LED_B, OUTPUT);
+
+  digitalWrite(LED_R, LOW);
+  digitalWrite(LED_G, LOW);
+  digitalWrite(LED_B, LOW);
+  processCarMovement("0");
   Serial.begin(115200);
   WiFi.begin(ssid, pass);
   while (WiFi.status() != WL_CONNECTED)
@@ -180,7 +236,9 @@ void setup(void)
   Serial.println("WiFi connected with IP : ");
   Serial.println(WiFi.localIP());
    
-  processCarMovement("0");
+  greenGlow();
+  delay(500);
+  redGlow();
   Serial.print("Things are going good");
 }
 
@@ -207,4 +265,5 @@ void loop()
       Serial.println(command);
     }
   }
+ client.stop();
 }

@@ -6,7 +6,7 @@ Repo to maintain the code for FLIPKART GRiD 3.0 - ROBOTICS CHALLENGE.
 Team Leader :
 1. [Gayathri]
 
-Software Module Members :
+Team Members :
 1. [Srinivas]
 2. [Amritha]
 3. [Harish R]
