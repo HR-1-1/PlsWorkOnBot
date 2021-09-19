@@ -29,7 +29,7 @@ You can find the details of the competition [here].
 - Get the necessary components and make connections as shown in [this picture].
 - The current version of our bot looks like this :
 
-![Bot version 1](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Bot_Pics/Bot%20v1.jpeg)
+![Bot version 3](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/Bot_Pics/Bot%20v3.jpeg)
 
 - Clone the repo and upload the sketch file to the ESP32 board.
 - Take a print of the aruco Codes [given here] and set up the [arena] as shown here.
