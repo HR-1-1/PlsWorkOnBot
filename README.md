@@ -1,7 +1,7 @@
 # PlsWorkOnBot
 Repo to maintain the solution for FLIPKART GRiD 3.0 - ROBOTICS CHALLENGE.
 - Start Date : 02.08.2021
-- SUBMISSION DEADLINE : 19.09.2021
+- SUBMISSION DEADLINE : 03.10.2021
 
 Team Leader :
 1. [Gayathri]
