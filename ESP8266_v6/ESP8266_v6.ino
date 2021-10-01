@@ -3,8 +3,7 @@
 Servo Smotor;
 
 int Input_Command;
-int tilt_up = 90;
-int tilt_down = 180;
+
 
 AF_DCMotor Gmotor1(1);
 AF_DCMotor Gmotor2(2);
@@ -16,7 +15,7 @@ void setup() {
   Serial.begin(115200);
 
   Smotor.attach(9);
-  Smotor.write(tilt_down);
+  Smotor.write(180);
 
   Gmotor1.setSpeed(200);
   Gmotor1.run(RELEASE);
@@ -158,13 +157,13 @@ void loop() {
         
 
       case 57:
-        Smotor.write(tilt_up);
-        delay(100);
+        Smotor.write(90);
+        delay(1000);
         break;
 
       case 58:
-        Smotor.write(tilt_down);
-        delay(100);
+        Smotor.write(180);
+        delay(1000);
         break;
 
       case 48:
