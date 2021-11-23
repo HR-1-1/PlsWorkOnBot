@@ -1,9 +1,11 @@
 # PlsWorkOnBot
-Repo to maintain the solution for FLIPKART GRiD 3.0 - ROBOTICS CHALLENGE.
+Our team submission for FLIPKART GRiD 3.0 - ROBOTICS CHALLENGE.
 - Start Date : 02.08.2021
 - SUBMISSION DEADLINE : 03.10.2021
 
 You can find the details of the competition [here](https://dare2compete.com/hackathon/flipkart-grid-30-robotics-challenge-flipkart-grid-30-flipkart-175210).
+
+> Note : Click [here](https://github.com/HR-1-1/PlsWorkOnBot/blob/main/cerif.pdf) to view the certificate!
 
 ---
 
